@@ -51,8 +51,8 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "jp.supertask.shaderliburp": {
-      "version": "file:jp.supertask.shaderliburp",
+    "jp.supertask.shaderlibcore": {
+      "version": "file:jp.supertask.shaderlibcore",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
