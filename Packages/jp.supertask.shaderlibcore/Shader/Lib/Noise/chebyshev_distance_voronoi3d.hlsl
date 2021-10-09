@@ -1,4 +1,4 @@
-#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/common_voronoi3d.hlsl"
+#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Noise/common_voronoi3d.hlsl"
 
 //#define MINKOWSKI
 #define CHEBYSHEV
