@@ -1,0 +1,15 @@
+{
+  "author": {
+    "name": "Tasuku Takahashi"
+  },
+  "description": "Basic Shader Library",
+  "displayName": "Shader Library Core",
+  "keywords": [ "unity" ],
+  "license": "MIT",
+  "name": "jp.supertask.shaderlibcore",
+  "repository": "github:supertask/ShaderLibCore",
+  "unity": "2021.2",
+  "unityRelease": "0b11",
+  "version": "1.0.0"
+}
+
