@@ -4,12 +4,14 @@
   },
   "description": "Basic Shader Library",
   "displayName": "Shader Library Core",
-  "keywords": [ "unity" ],
+  "keywords": [
+    "unity",
+    "shader"
+  ],
   "license": "MIT",
   "name": "jp.supertask.shaderlibcore",
   "repository": "github:supertask/ShaderLibCore",
-  "unity": "2021.2",
-  "unityRelease": "0b11",
+  "unity": "2021.1",
+  "unityRelease": "16f1",
   "version": "1.0.0"
 }
-
