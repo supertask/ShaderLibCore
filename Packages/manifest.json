@@ -1,5 +1,15 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "Keijiro",
+      "url": "https://registry.npmjs.com",
+      "scopes": [
+        "jp.keijiro"
+      ]
+    }
+  ],
   "dependencies": {
-    "com.unity.render-pipelines.universal": "11.0.0"
+    "com.unity.render-pipelines.universal": "11.0.0",
+    "jp.keijiro.noiseshader": "2.0.0"
   }
 }
