@@ -430,4 +430,36 @@ float3 CurlNoise(float3 pos, float e) {
 
 	return normalize(float3(x, y, z) / e2);
 }
+
+
+float random(float x) {
+	return frac(sin(x)*1e4);
+}
+
+float random(float2 _st) {
+	return frac(sin(dot(_st.xy, float2(12.9898, 78.233))) * 43758.5453123);
+}
+
+float random(float3 _st) {
+	return frac(sin(dot(_st.xyz, float3(12.9898, 78.233, 56.787))) * 43758.5453123);
+}
+
+// Based on Morgan McGuire @morgan3d
+// https://www.shadertoy.com/view/4dS3Wd
+float valueNoise(float2 _st) {
+	float2 i = floor(_st);
+	float2 f = frac(_st);
+
+	// Four corners in 2D of a tile
+	float a = random(i);
+	float b = random(i + float2(1.0, 0.0));
+	float c = random(i + float2(0.0, 1.0));
+	float d = random(i + float2(1.0, 1.0));
+
+	float2 u = f * f * (3.0 - 2.0 * f);
+
+	return lerp(a, b, u.x) +
+		(c - a)* u.y * (1.0 - u.x) +
+		(d - b) * u.x * u.y;
+}
 #endif // NOISE_INCLUDED
