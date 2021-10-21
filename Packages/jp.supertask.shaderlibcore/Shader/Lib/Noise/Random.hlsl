@@ -1,6 +1,8 @@
 ﻿#ifndef RANDOMUTIL
 #define RANDOMUTIL
-#include "ConstantUtil.cginc"
+
+#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Util/Constant.hlsl"
+
 inline float rnd(float2 p) {
     return frac(sin(dot(p, float2(12.9898, 78.233))) * 43758.5453);
 } 
