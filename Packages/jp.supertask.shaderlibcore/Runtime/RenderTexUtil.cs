@@ -5,6 +5,16 @@ namespace ComputeShaderUtil
 {
     public class RenderTexUtil : MonoBehaviour
     {
+        //
+        // Creates RenderTexture.
+        // It seems like ComputeShader only supports RenderTexture generated on a script.
+        // So I recommend to use this for it.
+        //
+        // examples:
+        //   RenderUtility.CreateRenderTexture(
+        //     rippleTex.width, rippleTex.height, 0
+        //     RenderTextureFormat.ARGBFloat, TextureWrapMode.Repeat,
+        //     FilterMode.Point);
         public static RenderTexture CreateRenderTexture(int width, int height, int depth, RenderTextureFormat format, TextureWrapMode wrapMode = TextureWrapMode.Repeat, FilterMode filterMode = FilterMode.Bilinear, RenderTexture rt = null)
         {
             if (rt != null)
