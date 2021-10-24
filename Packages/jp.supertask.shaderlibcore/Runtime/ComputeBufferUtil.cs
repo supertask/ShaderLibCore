@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 namespace ComputeShaderUtil
 {
-	public class Util
+	public class ComputeBufferUtil
     {
         //
         // Debug Compute Buffer
