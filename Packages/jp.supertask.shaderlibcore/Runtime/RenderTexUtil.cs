@@ -11,7 +11,7 @@ namespace ComputeShaderUtil
         // So I recommend to use this for it.
         //
         // examples:
-        //   RenderUtility.CreateRenderTexture(
+        //   RenderTexUtil.CreateRenderTexture(
         //     rippleTex.width, rippleTex.height, 0
         //     RenderTextureFormat.ARGBFloat, TextureWrapMode.Repeat,
         //     FilterMode.Point);
