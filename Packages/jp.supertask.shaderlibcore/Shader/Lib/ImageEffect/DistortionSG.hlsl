@@ -15,19 +15,19 @@ float2 getRotationUV(float2 uv, float angle, float power) {
 	return v;
 }
 
-void Distortion_float(
-	sampler2D tex,
+void DistortionUV_float(
 	float2 uv,
 	float distortionNoiseScale,
 	float3 distortionNoisePosition,
 	float distortionPower,
-	out float4 color)
+	out float2 distortedUV)
 {
 	float3 uv1 = float3(uv * distortionNoiseScale,0);
 	float3 noise = snoise_grad(uv1 + distortionNoisePosition);
 				
-	float2 uv = getRotationUV(uv, noise.x, noise.y * distortionPower);
-	color = tex2D(_MainTex, uv);
+	distortedUV = getRotationUV(uv, noise.x, noise.y * distortionPower);
+	distortedUV = frac(distortedUV); //repeated uv (0 ~ 1)
 }
+
 
 #endif

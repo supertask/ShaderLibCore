@@ -305,8 +305,12 @@ MonoBehaviour:
   beforeTAACustomPostProcesses: []
   beforePostProcessCustomPostProcesses: []
   afterPostProcessCustomPostProcesses:
-  - ShaderLibCore.PostProcessing.Distortion, ShaderLib.PostProcessing, Version=0.0.0.0,
+  - ShaderLibCore.PostProcessing.Distortion, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - ShaderLibCore.PostProcessing.RadiationBlur, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
+  - Kino.PostProcessing.Glitch, Kino.Postprocessing, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256
     streamingGpuCacheSettings:
