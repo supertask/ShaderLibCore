@@ -37,9 +37,7 @@ Shader "Hidden/VJKit/PostProcess/Mosaic"
                 return output;
             }
 
-
-            float _DistortionNoiseScale;
-            float _DistortionPower;
+            float _MosaicScale;
 
             TEXTURE2D_X(_InputTexture);
             //SAMPLER(sampler_InputTexture);
@@ -51,14 +49,12 @@ Shader "Hidden/VJKit/PostProcess/Mosaic"
 
                 float2 uv = input.texcoord;
 
-                float2 distortedUV;
+                float2 mosaicUV;
                 float4 color;
-                /*
-                MosaicUV_float(uv,
-                    _DistortionNoiseScale, _DistortionNoisePosition, _DistortionPower,
-                    distortedUV);
-                color = LOAD_TEXTURE2D_X(_InputTexture, distortedUV * _ScreenSize.xy);
-                */
+                
+                MosaicUV_float(uv, _MosaicScale, mosaicUV);
+                color = LOAD_TEXTURE2D_X(_InputTexture, mosaicUV * _ScreenSize.xy);
+                
                 return color;
             }
 

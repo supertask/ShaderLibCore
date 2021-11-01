@@ -7,7 +7,7 @@ namespace ShaderLibCore.PostProcessing
     [System.Serializable, VolumeComponentMenu("Post-processing/VJKit/Mosaic")]
     public sealed class Mosaic : CustomPostProcessVolumeComponent, IPostProcessComponent
     {
-        public ClampedFloatParameter scale = new ClampedFloatParameter(0.5f, 0, 1.0f);
+        public ClampedFloatParameter scale = new ClampedFloatParameter(0f, 0f, 100.0f);
         public Bool​Parameter isCircle = new Bool​Parameter(false);
 
         ///public Vector3Parameter position = new Vector3Parameter(new Vector3(0,0,1));
