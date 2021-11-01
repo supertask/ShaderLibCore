@@ -69,6 +69,40 @@ MonoBehaviour:
     m_Value: 0
     min: 0
     max: 1
+--- !u!114 &-2062083146128236098
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9b633332767e5409fda8c9ece40216, type: 3}
+  m_Name: RectBlockGlitch
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  noiseSpeed:
+    m_OverrideState: 0
+    m_Value: 0.9
+    min: 0
+    max: 1
+  noiseColorChange:
+    m_OverrideState: 0
+    m_Value: 0.85
+    min: 0
+    max: 1
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  glitchScale:
+    m_OverrideState: 0
+    m_Value: 32
+    min: 0
+    max: 150
 --- !u!114 &-1252917266381205679
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -108,6 +142,7 @@ MonoBehaviour:
   - {fileID: -4492753102241306224}
   - {fileID: -7013381995553300511}
   - {fileID: 5709825762171858633}
+  - {fileID: -2062083146128236098}
 --- !u!114 &1533978315674842829
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -186,10 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cedec2e20a3e4bf488f7afcdfa8079b9, type: 3}
   m_Name: Mosaic
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   scale:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: 0
     max: 100

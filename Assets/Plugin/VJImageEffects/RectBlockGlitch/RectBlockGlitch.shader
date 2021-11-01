@@ -40,18 +40,39 @@ Shader "Hidden/VJKit/PostProcess/RectBlockGlitch"
 
             TEXTURE2D_X(_InputTexture);
             //SAMPLER(sampler_InputTexture);
-                        
-            float _NegativeRatio;
+            TEXTURE2D(_NoiseTexture);
+			float _Intensity;
+            float2 _NoiseTextureSize;
 
             float4 Fragment(Varyings input) : SV_Target
             {
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
 
                 float2 uv = input.texcoord;
+
+				float4 noise = LOAD_TEXTURE2D(_NoiseTexture, uv * _NoiseTextureSize);
+				
+				float thresh = 1.001 - _Intensity * 1.001;
+				
+				float slide = step(thresh, pow(noise.b, 2.5));
+				float ref_a = step(thresh, pow(noise.a, 2.5));
+				float ref_g = step(thresh, pow(noise.r, 2.5));
+				float ref_b = step(thresh, pow(noise.g, 2.5));
+				float d = step(thresh, pow(noise.b, 3.5));
+
+				float2 uv_slide = (uv + noise.xy * slide) % 1;
+				float2 uv_ref_r = (uv + noise.xy * ref_a) % 1;
+				float2 uv_ref_g = (uv + noise.xy * ref_g) % 1;
+				float2 uv_ref_b = (uv + noise.xy * ref_b) % 1;
                 
-				float4 color = LOAD_TEXTURE2D_X(_InputTexture, uv * _ScreenSize.xy);
-                color = lerp(color, 1 - color, _NegativeRatio);
-                return color;
+				float4 col1 = LOAD_TEXTURE2D_X(_InputTexture, uv * _ScreenSize.xy);
+				float3 col2 = float3(
+                    LOAD_TEXTURE2D_X(_InputTexture, uv_ref_r * _ScreenSize.xy).r,
+                    LOAD_TEXTURE2D_X(_InputTexture, uv_ref_g * _ScreenSize.xy).g,
+                    LOAD_TEXTURE2D_X(_InputTexture, uv_ref_b * _ScreenSize.xy).b
+                );
+
+				return float4(lerp(col1, col2, d), 1);
             }
 
 
