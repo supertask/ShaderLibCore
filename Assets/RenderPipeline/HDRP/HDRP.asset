@@ -311,6 +311,12 @@ MonoBehaviour:
     Culture=neutral, PublicKeyToken=null
   - Kino.PostProcessing.Glitch, Kino.Postprocessing, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
+  - ShaderLibCore.PostProcessing.RGBShift, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - ShaderLibCore.PostProcessing.Negative, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - ShaderLibCore.PostProcessing.RandomInvert, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256
     streamingGpuCacheSettings:
