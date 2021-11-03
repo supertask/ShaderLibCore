@@ -18,7 +18,8 @@ float2 getRotationUV(float2 uv, float angle, float power) {
 
 
 float fukuokaMirrorX(float x) {
-    return abs(fmod(x, 2.0) - 1) * 0.995 + 0.003;
+    //return abs(fmod(x + 1, 2.0) - 1) * 0.995 + 0.003;
+    return abs(fmod(x + 10, 2.0) - 1) * 0.995 + 0.003;
 }
 
 float2 fukuokaMirrorUV(float2 uv) {
@@ -36,11 +37,16 @@ void DistortionUV_float(
 	float3 noise = snoise_grad(uv1 + distortionNoisePosition);
 				
 	distortedUV = getRotationUV(uv, noise.x, noise.y * distortionPower);
-	//distortedUV = saturate(distortedUV);
+	
+	//distortedUV.x = fukuokaMirrorX(distortedUV.x);
+	//distortedUV.y = fukuokaMirrorX(distortedUV.y);
+
 	distortedUV.x = distortedUV.x < 0 ? frac(- distortedUV.x) : distortedUV.x;
+	distortedUV.x = distortedUV.x > 1 ? 1 - frac(distortedUV.x) : distortedUV.x;
 	distortedUV.y = distortedUV.y < 0 ? frac(- distortedUV.y) : distortedUV.y;
-	distortedUV.x = distortedUV.x > 1 ? frac(distortedUV.x) : distortedUV.x;
-	distortedUV.y = distortedUV.y > 1 ? frac(distortedUV.y) : distortedUV.y;
+	distortedUV.y = distortedUV.y > 1 ? 1 - frac(distortedUV.y) : distortedUV.y;
+	
+
 	//distortedUV = frac(distortedUV); //repeated uv (0 ~ 1), TODO(Tasuku): Mirrorに変更する
 }
 

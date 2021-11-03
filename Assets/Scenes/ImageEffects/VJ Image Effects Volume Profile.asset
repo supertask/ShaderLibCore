@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   power:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
     min: 0
     max: 100
 --- !u!114 &-4492753102241306224

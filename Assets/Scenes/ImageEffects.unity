@@ -648,7 +648,7 @@ MonoBehaviour:
   maxMosaiceScale: 64
   maxRadiationBlurPower: 64
   maxGlitchIntensity: 0.95
-  maxDistortionPower: 0.1
+  maxDistortionPower: 0.15
   maxRGBShiftPower: 54
 --- !u!1 &2056933258
 GameObject:

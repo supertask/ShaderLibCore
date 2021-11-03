@@ -51,7 +51,7 @@ namespace ShaderLibCore.PostProcessing.Manager {
         public float maxMosaiceScale = 64;
         public float maxRadiationBlurPower = 64;
         public float maxGlitchIntensity = 0.95f;
-        public float maxDistortionPower = 0.1f;
+        public float maxDistortionPower = 0.15f;
         public float maxRGBShiftPower = 54;
         #endregion
 
