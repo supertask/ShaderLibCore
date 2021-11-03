@@ -321,6 +321,8 @@ MonoBehaviour:
     PublicKeyToken=null
   - ShaderLibCore.PostProcessing.RectBlockGlitch, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
+  - ShaderLibCore.PostProcessing.Reflection, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256
     streamingGpuCacheSettings:
