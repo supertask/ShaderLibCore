@@ -1,10 +1,20 @@
 ﻿
+//
+// Cinema
+//
+// MIT License
+// Copyright (c) 2021 Tasuku TAKAHASHI
+// Copyright (c) 2018 kaiware007
+//     UnityVJShaderSlide20181108, https://github.com/kaiware007/UnityVJShaderSlide20181108
+// Copyright (C) 2011 by Ashima Arts (Simplex noise)
+// Copyright (C) 2011-2016 by Stefan Gustavson (Classic noise and others)
+//
+
 #ifndef IMAGE_EFFECT_DISTORTION
 #define IMAGE_EFFECT_DISTORTION
 
-#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Util/Constant.hlsl"
-//#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Noise/Noise.hlsl"
-#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Noise/SimplexNoiseGrad3D.cginc"
+#include "./Constant.hlsl"
+#include "./Noise.hlsl"
 
 float2 getRotationUV(float2 uv, float angle, float power) {
 	float2 v = (float2)0;

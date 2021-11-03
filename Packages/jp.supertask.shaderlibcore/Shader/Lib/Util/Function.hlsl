@@ -47,8 +47,11 @@ float smoothpulse(float a1, float a2, float b1, float b2, float x)
 }
 
 
-float fukuokaMirrorUv(float x) {
-    return abs(fmod(x, 2.0) - 1) * 0.995 + 0.003;
+// Triangle wave for ping pong uv
+// Usecase: PingPong texture
+float fukuokaTriangleWave(float x) {
+    //return abs(fmod(x, 2.0) - 1) * 0.995 + 0.003; //original version
+    return abs(fmod(x + 1 + 100, 2.0) - 1);
 }
 
 

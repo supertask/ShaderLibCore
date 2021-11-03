@@ -1,4 +1,15 @@
 ﻿
+//
+// Cinema
+//
+// MIT License
+// Copyright (c) 2021 Tasuku TAKAHASHI
+// Copyright (c) 2018 kaiware007
+//     UnityVJShaderSlide20181108, https://github.com/kaiware007/UnityVJShaderSlide20181108
+// Copyright (C) 2011 by Ashima Arts (Simplex noise)
+// Copyright (C) 2011-2016 by Stefan Gustavson (Classic noise and others)
+//
+
 #ifndef IMAGE_EFFECT_MOSAIC
 #define IMAGE_EFFECT_MOSAIC
 

@@ -307,21 +307,21 @@ MonoBehaviour:
   afterPostProcessCustomPostProcesses:
   - Kino.PostProcessing.Glitch, Kino.Postprocessing, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
-  - ShaderLibCore.PostProcessing.Distortion, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  - Cinema.PostProcessing.Distortion, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
-  - ShaderLibCore.PostProcessing.RadiationBlur, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  - ShaderLibCore.PostProcessing.RGBShift, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  - Cinema.PostProcessing.Mosaic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
-  - ShaderLibCore.PostProcessing.Negative, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  - Cinema.PostProcessing.Negative, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
-  - ShaderLibCore.PostProcessing.RandomInvert, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  - ShaderLibCore.PostProcessing.Mosaic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  - Cinema.PostProcessing.RadiationBlur, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
-  - ShaderLibCore.PostProcessing.RectBlockGlitch, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  - ShaderLibCore.PostProcessing.Reflection, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  - Cinema.PostProcessing.RandomInvert, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - Cinema.PostProcessing.RectBlockGlitch, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - Cinema.PostProcessing.Reflection, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - Cinema.PostProcessing.RGBShift, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256
