@@ -11,7 +11,7 @@ namespace ShaderLibCore.PostProcessing
         //public Bool​Parameter isCircle = new Bool​Parameter(false);
 
         public Vector2Parameter center = new Vector2Parameter(new Vector3(0.5f, 0.5f));
-        public ClampedFloatParameter power = new ClampedFloatParameter(0, 0, 0.2f);
+        public ClampedFloatParameter power = new ClampedFloatParameter(0, 0, 100);
 
         Material _material;
 

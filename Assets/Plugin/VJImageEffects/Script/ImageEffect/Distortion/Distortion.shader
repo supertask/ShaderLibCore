@@ -1,4 +1,4 @@
-Shader "Hidden/VJKit/PostProcess/RadiationBlur"
+Shader "Hidden/VJKit/PostProcess/Distortion"
 {
     SubShader
     {
@@ -12,7 +12,7 @@ Shader "Hidden/VJKit/PostProcess/RadiationBlur"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
             #include "Packages/com.unity.render-pipelines.high-definition/Runtime/ShaderLibrary/ShaderVariables.hlsl"
-            //#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/ImageEffect/MosaicSG.hlsl"
+            #include "Packages/jp.supertask.shaderlibcore/Shader/Lib/ImageEffect/DistortionSG.hlsl"
 
             struct Attributes
             {
@@ -37,12 +37,13 @@ Shader "Hidden/VJKit/PostProcess/RadiationBlur"
                 return output;
             }
 
+            float _DistortionNoiseScale;
+            float3 _DistortionNoisePosition;
+            float _DistortionPower;
+
             TEXTURE2D_X(_InputTexture);
             //SAMPLER(sampler_InputTexture);
-			float4  _InputTexture_TexelSize;
 
-			float2 _BlurCenter;
-			float _BlurPower;
 
             float4 Fragment(Varyings input) : SV_Target
             {
@@ -50,18 +51,12 @@ Shader "Hidden/VJKit/PostProcess/RadiationBlur"
 
                 float2 uv = input.texcoord;
 
-				float2 dir = _BlurCenter - uv;
-				float distance = length(dir);
-                
-				dir = normalize(dir) * _InputTexture_TexelSize.xy * 1000;
-				dir *= _BlurPower * distance;
-
-				float4 color = LOAD_TEXTURE2D_X(_InputTexture, uv * _ScreenSize.xy) * 0.19;
-                for (int j = 1; j < 10; j++) {
-                    float2 radiationUV = uv + dir * j;
-					color += LOAD_TEXTURE2D_X(_InputTexture, radiationUV * _ScreenSize.xy)
-                        * (0.19 - j * 0.02);
-				}
+                float2 distortedUV;
+                DistortionUV_float(uv,
+                    _DistortionNoiseScale, _DistortionNoisePosition, _DistortionPower,
+                    distortedUV);
+                //return float4(distortedUV, 0, 1);
+                float4 color = LOAD_TEXTURE2D_X(_InputTexture, distortedUV * _ScreenSize.xy);
 
                 return color;
             }
