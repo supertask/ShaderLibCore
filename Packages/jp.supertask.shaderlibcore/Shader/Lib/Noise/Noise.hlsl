@@ -483,22 +483,59 @@ float morganNoise(float2 _st) {
 		(d - b) * u.x * u.y;
 }
 
-#define NUM_OCTAVES 5
-
+// FBM https://thebookofshaders.com/13/
 // Based on Morgan McGuire @morgan3d
 // https://www.shadertoy.com/view/4dS3Wd
-float fbm(float2 _st) {
+float fbm2DWithMorgan(float2 _st, int numOfOctaves) {
 	float v = 0.0;
 	float a = 0.5;
 	float2 shift = float2(10.0, 10.0);
 	// Rotate to reduce axial bias
 	float2x2 rot = float2x2(cos(0.5), sin(0.5),
 		-sin(0.5), cos(0.50));
-	for (int i = 0; i < NUM_OCTAVES; ++i) {
+	for (int i = 0; i < numOfOctaves; ++i) {
 		v += a * morganNoise(_st);
 		_st = mul(rot, _st * 2.0 + shift);
 		a *= 0.5;
 	}
 	return v;
 }
+
+//
+// FBM with simplex noise
+// Ref. Keijiro, https://github.com/keijiro/Klak/blob/b38ec4dbc0c614fd6fba08c44ddef80783855c02/Assets/Klak/Math/Runtime/Perlin.cs#L109
+//
+float fbmWithSimplex(float u, int numOfOctaves) {
+	float f = 0.0;
+	float w = 0.5;
+	for (int i = 0; i < numOfOctaves; i++) {
+		f += w * snoise(float2(u, 0.0));
+		u *= 2.0;
+		w *= 0.5;
+	}
+	return f;
+}
+
+float fbmWithSimplex(float2 uv, int numOfOctaves) {
+	float f = 0.0;
+	float w = 0.5;
+	for (int i = 0; i < numOfOctaves; i++) {
+		f += w * snoise(uv);
+		uv *= 2.0;
+		w *= 0.5;
+	}
+	return f;
+}
+
+float fbmWithSimplex(float3 uv, int numOfOctaves) {
+	float f = 0.0;
+	float w = 0.5;
+	for (int i = 0; i < numOfOctaves; i++) {
+		f += w * snoise(uv);
+		uv *= 2.0;
+		w *= 0.5;
+	}
+	return f;
+}
+
 #endif // NOISE_INCLUDED
