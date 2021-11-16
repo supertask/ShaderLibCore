@@ -1,5 +1,5 @@
 
-#include "Packages/jp.supertask.shaderliburp/Shader/Lib/PhotoShopMath.hlsl"
+#include "./PhotoShopMath.hlsl"
 
 void DesaturateShaderGraph_float(float3 color, float Desaturation, out float4 res)
 {
