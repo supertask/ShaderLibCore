@@ -1,6 +1,11 @@
 {
   "scopedRegistries": [
     {
+      "name": "Unity NuGet",
+      "url": "https://unitynuget-registry.azurewebsites.net",
+      "scopes": [ "org.nuget" ]
+    },
+    {
       "name": "Keijiro",
       "url": "https://registry.npmjs.com",
       "scopes": [
@@ -11,12 +16,16 @@
   "dependencies": {
     "com.unity.render-pipelines.high-definition": "11.0.0",
     "com.unity.render-pipelines.universal": "11.0.0",
-    "com.unity.visualeffectgraph": "11.0.0",
-    "jp.keijiro.noiseshader": "2.0.0",
-    "jp.keijiro.kino.post-processing": "2.1.15",
+    "org.nuget.system.memory": "4.5.3",
     "com.unity.timeline": "1.6.2",
+    "com.unity.visualeffectgraph": "11.0.0",
+    "jp.keijiro.laspvfx": "1.0.2",
     "jp.keijiro.beta": "1.0.2",
     "jp.keijiro.cmu-mocap": "1.0.0",
-    "com.unity.modules.jsonserialize": "1.0.0"
+    "jp.keijiro.kino.post-processing": "2.1.15",
+    "jp.keijiro.minis": "1.0.10",
+    "jp.keijiro.noiseshader": "2.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.uielements": "1.0.0"
   }
 }
