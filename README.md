@@ -8,7 +8,7 @@ This shader library is still **under development**.
 System Requirements
 -------------------
 
-- Unity 2021.1
+- Unity 2021.1 or later
 
 Effects
 -------
