@@ -5,11 +5,6 @@ Extended HLSL codes which are useful for ShaderGraph. The most of HLSL codes are
 This shader library is still **under development**.
 
 
-System Requirements
--------------------
-
-- Unity 2021.1 or later
-
 Effects
 -------
 
