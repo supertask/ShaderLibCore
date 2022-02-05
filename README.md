@@ -1,6 +1,6 @@
 # ShaderLibraryCore
 
-HLSL codes which are useful for ShaderGraph. The most of HLSL codes are [HERE](https://github.com/supertask/ShaderLibCore/tree/main/Packages/jp.supertask.shaderlibcore/Shader/Lib).
+Extended HLSL codes which are useful for ShaderGraph. The most of HLSL codes are [HERE](https://github.com/supertask/ShaderLibCore/tree/main/Packages/jp.supertask.shaderlibcore/Shader/Lib).
 
 This shader library is still **under development**.
 
