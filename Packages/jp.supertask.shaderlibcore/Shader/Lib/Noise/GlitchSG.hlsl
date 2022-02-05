@@ -9,7 +9,7 @@ void BasicGlitch_float(float2 uv, int samples, out float4 res)
     {
         e = floor(c);
         res += sin(e * e.yxyx + e * (_Time/10));
-        c *= 3.0;
+        c *= 2.5;
     }
 }
 

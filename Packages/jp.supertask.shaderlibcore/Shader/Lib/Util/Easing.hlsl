@@ -2,7 +2,8 @@
 #define EASING_INCLUDED
 
 //easing func from jQuery Easing Plugin
-// http://gsgd.co.uk/sandbox/jquery/easing/
+//   http://gsgd.co.uk/sandbox/jquery/easing/
+//   https://easings.net/
 float easeInQuad(float x) {
 	float t = x; float b = 0; float c = 1; float d = 1;
 	return c*(t/=d)*t + b;
