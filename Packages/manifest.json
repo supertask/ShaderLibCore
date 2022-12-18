@@ -3,7 +3,9 @@
     {
       "name": "Unity NuGet",
       "url": "https://unitynuget-registry.azurewebsites.net",
-      "scopes": [ "org.nuget" ]
+      "scopes": [
+        "org.nuget"
+      ]
     },
     {
       "name": "Keijiro",
@@ -14,17 +16,17 @@
     }
   ],
   "dependencies": {
-    "com.unity.render-pipelines.high-definition": "11.0.0",
-    "com.unity.render-pipelines.universal": "11.0.0",
-    "org.nuget.system.memory": "4.5.3",
-    "com.unity.timeline": "1.6.2",
-    "com.unity.visualeffectgraph": "11.0.0",
-    "jp.keijiro.laspvfx": "1.0.2",
+    "com.unity.render-pipelines.high-definition": "12.1.7",
+    "com.unity.render-pipelines.universal": "12.1.7",
+    "com.unity.timeline": "1.6.4",
+    "com.unity.visualeffectgraph": "12.1.7",
     "jp.keijiro.beta": "1.0.2",
     "jp.keijiro.cmu-mocap": "1.0.0",
     "jp.keijiro.kino.post-processing": "2.1.15",
+    "jp.keijiro.laspvfx": "1.0.2",
     "jp.keijiro.minis": "1.0.10",
     "jp.keijiro.noiseshader": "2.0.0",
+    "org.nuget.system.memory": "4.5.3",
     "com.unity.modules.jsonserialize": "1.0.0",
     "com.unity.modules.uielements": "1.0.0"
   }
