@@ -46,6 +46,22 @@ float smoothpulse(float a1, float a2, float b1, float b2, float x)
     return smoothstep(a1, a2, x) - smoothstep(b1, b2, x);
 }
 
+float smoothstepMountain(float x,
+    float centerX, float mainWidth, float slopeWidth)
+{
+    float halfMainWidth = mainWidth / 2.0;
+    float begin = centerX - halfMainWidth;
+    float end = centerX + halfMainWidth;
+
+    return smoothstep(begin, begin + slopeWidth, x)
+        * smoothstep(end, end - slopeWidth, x);
+}
+
+void SmoothstepMountain_float(float x,
+    float centerX, float mainWidth, float slopeWidth, out float y)
+{
+    y = smoothstepMountain(x, centerX, mainWidth, slopeWidth);
+}
 
 // Triangle wave for ping pong uv
 // Usecase: PingPong texture
