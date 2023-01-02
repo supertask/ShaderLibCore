@@ -3,8 +3,9 @@
 #define IMAGE_EFFECT_DISTORTION
 
 #include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Util/Constant.hlsl"
-//#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Noise/Noise.hlsl"
-#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Noise/SimplexNoiseGrad3D.cginc"
+#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Util/Function.hlsl"
+#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Noise/Noise.hlsl"
+//#include "Packages/jp.supertask.shaderlibcore/Shader/Lib/Noise/SimplexNoiseGrad3D.cginc"
 
 float2 getRotationUV(float2 uv, float thetaAngle, float power) {
 	float2 v = (float2)0;
@@ -26,26 +27,6 @@ float3 getRotationUVW(float3 uvw, float thetaAngle, float phiAngle, float power)
 	v.z = uvw.z + cos(theta) * power;
 
 	return v;
-}
-
-// Triangle wave for ping pong uv
-// Usecase: PingPong texture
-float fukuokaTriangleWave(float x) {
-    //return abs(fmod(x, 2.0) - 1) * 0.995 + 0.003; //original version
-    return abs(fmod(x + 1 + 100, 2.0) - 1);
-}
-
-float2 fukuokaTriangleWave2D(float2 uv) {
-	return float2(fukuokaTriangleWave(uv.x), fukuokaTriangleWave(uv.y));
-}
-
-
-float3 fukuokaTriangleWave3D(float3 uv) {
-	return float3(
-		fukuokaTriangleWave(uv.x),
-		fukuokaTriangleWave(uv.y),
-		fukuokaTriangleWave(uv.z)
-	);
 }
 
 void DistortionUV_float(

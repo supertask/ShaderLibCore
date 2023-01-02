@@ -1,3 +1,6 @@
+#ifndef NOISE_SG_INCLUDED
+#define NOISE_SG_INCLUDED
+
 #include "./Noise.hlsl"
 
 void snoiseShaderGraph_float(float2 v, out float res)
@@ -99,3 +102,4 @@ void fbmWithSimplexShaderGraph_float(float3 uv, int numOfOctaves, out float res)
 {
 	res = fbmWithSimplex(uv, numOfOctaves);
 }
+#endif // NOISE_SG_INCLUDED

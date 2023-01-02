@@ -63,11 +63,24 @@ void SmoothstepMountain_float(float x,
     y = smoothstepMountain(x, centerX, mainWidth, slopeWidth);
 }
 
+
 // Triangle wave for ping pong uv
 // Usecase: PingPong texture
 float fukuokaTriangleWave(float x) {
     //return abs(fmod(x, 2.0) - 1) * 0.995 + 0.003; //original version
     return abs(fmod(x + 1 + 100, 2.0) - 1);
+}
+
+float2 fukuokaTriangleWave2D(float2 uv) {
+	return float2(fukuokaTriangleWave(uv.x), fukuokaTriangleWave(uv.y));
+}
+
+float3 fukuokaTriangleWave3D(float3 uv) {
+	return float3(
+		fukuokaTriangleWave(uv.x),
+		fukuokaTriangleWave(uv.y),
+		fukuokaTriangleWave(uv.z)
+	);
 }
 
 
