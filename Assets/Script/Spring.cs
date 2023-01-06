@@ -6,29 +6,22 @@ namespace ShaderLibCore
     {
         Random = 0,
         Up,
-        Down,
         Forward,
-        Back
     }
 
     public class Spring : MonoBehaviour
     {
+        [SerializeField] public SpringVectorType springVectorType = SpringVectorType.Up;
+        [SerializeField] public float m_ExpFrequency = 30f;
+        [SerializeField] public float m_CosFrequency = 100f;
+        [SerializeField] public float m_Amplitude = 0.4f;
+        
         private Camera m_MainCamera;
         private Material m_Material;
-
         private int m_RandomVector;
         private int m_ImpactValueAtCurveHash;
-
         private float m_TimeSincePressed;
 
-        public AnimationCurve m_AnimationCurve;
-        //public GameObject brownianPoint;
-        
-        private SpringVectorType springVectorType = SpringVectorType.Up;
-        private float speed = 4.0f;
-
-
-        // Start is called before the first frame update
         void Start()
         {
             m_MainCamera = Camera.main;
@@ -39,19 +32,17 @@ namespace ShaderLibCore
             m_Material.SetFloat(m_ImpactValueAtCurveHash, 0f);
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (Input.GetMouseButtonDown(0))
             {
                 OnButtonPressed();
             }
-            //m_Material.SetVector("_HitPositionWS", brownianPoint.transform.position);
-            //Debug.Log("brownianPoint: " +  brownianPoint.transform.position);
 
-            if (m_TimeSincePressed < 1.0f) {
-                m_Material.SetFloat(m_ImpactValueAtCurveHash, m_AnimationCurve.Evaluate(m_TimeSincePressed));
-                m_TimeSincePressed += speed * Time.deltaTime;
+            if (m_TimeSincePressed < 1.0f)
+            {
+                m_Material.SetFloat(m_ImpactValueAtCurveHash, Util.SpringLightDamping(m_TimeSincePressed, m_ExpFrequency, m_CosFrequency, m_Amplitude));
+                m_TimeSincePressed += Time.deltaTime;
             }
         }
         
@@ -60,8 +51,12 @@ namespace ShaderLibCore
             m_TimeSincePressed = 0.0f;
             if (springVectorType == SpringVectorType.Random) {
                 m_Material.SetVector(m_RandomVector, Random.insideUnitSphere);
-            } else {
+            }
+            else if (springVectorType == SpringVectorType.Up) {
                 m_Material.SetVector(m_RandomVector, Vector3.up);
+            }
+            else if (springVectorType == SpringVectorType.Forward) {
+                m_Material.SetVector(m_RandomVector, Vector3.forward);
             }
         }
     }

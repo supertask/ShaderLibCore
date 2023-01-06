@@ -223,7 +223,7 @@ Material:
     - _HeightPoMAmplitude: 2
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
-    - _ImpactValueAtCurve: -0.050402384
+    - _ImpactValueAtCurve: 0.00000003204281
     - _InvTilingScale: 1
     - _Ior: 1.5
     - _IridescenceMask: 1

@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Deformation3D/AllDeformation3D.unity
+    guid: 08cdb5310a1f1744b958bf3c9b60fd3b
   m_configObjects: {}

@@ -4,20 +4,18 @@ namespace ShaderLibCore
 {
     public class Bounce : MonoBehaviour
     {
+        [SerializeField] public SpringVectorType springVectorType = SpringVectorType.Up;
+        [SerializeField] public float m_ExpFrequency = 30f;
+        [SerializeField] public float m_CosFrequency = 100f;
+        [SerializeField] public float m_Amplitude = 1.0f;
+
         private Camera m_MainCamera;
         private Material m_Material;
-
         private int m_RaycastHitHash;
         private int m_ImpactValueAtCurveHash;
         private int m_NormalDir;
-
         private float m_TimeSincePressed;
 
-        public AnimationCurve m_AnimationCurve;
-        //public GameObject brownianPoint;
-
-
-        // Start is called before the first frame update
         void Start()
         {
             m_MainCamera = Camera.main;
@@ -29,7 +27,6 @@ namespace ShaderLibCore
             m_Material.SetFloat(m_ImpactValueAtCurveHash, 0f);
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (Input.GetMouseButtonDown(0))
@@ -47,12 +44,9 @@ namespace ShaderLibCore
                     m_Material.SetVector(m_RaycastHitHash, raycastHit.point);
                 }
             }
-            //m_Material.SetVector("_HitPositionWS", brownianPoint.transform.position);
-            //Debug.Log("brownianPoint: " +  brownianPoint.transform.position);
-
             if (m_TimeSincePressed < 1.0f) {
                 m_TimeSincePressed += Time.deltaTime;
-                m_Material.SetFloat(m_ImpactValueAtCurveHash, m_AnimationCurve.Evaluate(m_TimeSincePressed));
+                m_Material.SetFloat(m_ImpactValueAtCurveHash, Util.SpringLightDamping(m_TimeSincePressed, m_ExpFrequency, m_CosFrequency, m_Amplitude));
             }
         }
     }

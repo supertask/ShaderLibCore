@@ -231,7 +231,7 @@ Material:
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
     - _ImpactForce: 3
-    - _ImpactValueAtCurve: -0.00937444
+    - _ImpactValueAtCurve: 0.00000028254897
     - _InvTilingScale: 1
     - _Ior: 1.5
     - _IridescenceMask: 1
@@ -313,10 +313,10 @@ Material:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
-    - _HitPositionWS: {r: -2.8259807, g: 0.41624913, b: 0.24997985, a: 0}
+    - _HitPositionWS: {r: -2.8501637, g: 0.8703352, b: 0.20409036, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _NormalDir: {r: -0.5172723, g: -0.80656517, b: 0.10224929, a: 0}
+    - _NormalDir: {r: -0.3296765, g: -0.012657939, b: -0.04650942, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
