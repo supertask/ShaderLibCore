@@ -194,6 +194,8 @@ Material:
     - _AlphaToMaskInspectorValue: 0
     - _Anisotropy: 0
     - _BlendMode: 0
+    - _BounceRadius: 3
+    - _BounceStrengthAtCurve: 0.0034532323
     - _CoatMask: 0
     - _ConservativeDepthOffsetEnable: 0
     - _CullMode: 2
@@ -231,7 +233,7 @@ Material:
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
     - _ImpactForce: 3
-    - _ImpactValueAtCurve: 0.00000028254897
+    - _ImpactValueAtCurve: 0.00000069929484
     - _InvTilingScale: 1
     - _Ior: 1.5
     - _IridescenceMask: 1
@@ -307,16 +309,17 @@ Material:
     - Center: {r: 0, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
+    - _BounceDir: {r: 0.3104707, g: 0.2999047, b: -0.66040176, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
-    - _HitPositionWS: {r: -2.8501637, g: 0.8703352, b: 0.20409036, a: 0}
+    - _HitPositionWS: {r: 0, g: 1, b: 0, a: 0}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _NormalDir: {r: -0.3296765, g: -0.012657939, b: -0.04650942, a: 0}
+    - _NormalDir: {r: 0.70653695, g: -0.5160226, b: -0.10082542, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
