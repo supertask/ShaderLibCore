@@ -48,9 +48,25 @@ These are from Blender shader.
 
 Write a package path on manifest.json
 
+
+
+```
+{
+  "scopedRegistries": [
+    {
+      "name": "supertask",
+      "url": "https://registry.npmjs.com",
+      "scopes": [ "jp.supertask" ]
+    }
+  ],
+  "dependencies": {
+    "jp.supertask.shaderlibcore": "1.0.5",
+    ...
+```
+
+or
+
 ```
 "jp.supertask.shaderlibcore": "https://github.com/supertask/ShaderLibCore.git?path=/Packages/jp.supertask.shaderlibcore",
 ```
-
-
 
